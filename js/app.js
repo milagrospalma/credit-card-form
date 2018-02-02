@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  console.log('Probar con el numero valido 4544164785372342');      
+  console.log('Probar con el número válido 4544164785372342');      
   
   // Declaramos las variables que vamos a utilizar
   var $inputCard = $('#card-number');
@@ -26,14 +26,14 @@ $(document).ready(function() {
   } 
 
   // Funcion que valida la longitud del input ingresado por el usuario
-  function longitud(input) {
+  function cardNumberLength(input) {
     if (input.trim().length === 16) {
       return input;
     }
   }
   
   // Funcion que valida la longitud del input ingresado por el usuario
-  function soloNumeros(input) {
+  function onlyNumbers(input) {
     var regex = /^[0-9]+$/;
     if (regex.test(input)) {
       return input;
@@ -42,7 +42,7 @@ $(document).ready(function() {
  
   // Funcion que valida que sea una un numero de tarjeta valido   
   function isValidCreditCard(numberCard) {
-    var creditCardNumber = soloNumeros(longitud(numberCard));
+    var creditCardNumber = onlyNumbers(cardNumberLength(numberCard));
     if (creditCardNumber !== undefined) {
       var arr = [];
       var sumaTotal = 0;
